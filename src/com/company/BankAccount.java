@@ -16,20 +16,7 @@ public class BankAccount {
         this.amount +=sum;
     }
     public void withDraw(int sum){
-        Scanner sc = new Scanner(System.in);
-        if (this.amount >=sum){
-            this.amount -=sum;
-        }else{
-            try {
-                throw new LimitException("Недостаточно средств!",this.amount);
-            } catch (LimitException e) {
-                System.out.println(e.getMessage()+"\nвы можете снять: "+e.getRemainingAmount());
-                System.out.println("сумма: ");
-                Main.constant = sc.nextInt();
-
-            }
-        }
-
+        this.amount-=sum;
     }
 
 }
